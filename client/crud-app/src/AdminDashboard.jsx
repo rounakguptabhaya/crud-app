@@ -11,7 +11,7 @@ const AdminDashboard = () => {
 
     
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
     axios.defaults.withCredentials = true;
 
@@ -23,7 +23,11 @@ const AdminDashboard = () => {
              setData(res.data.result);
              setAuth(true);
             setName(res.data.username);
-           }else{
+           }
+           else if(res.data.Status === "You are user"){
+            navigate("/");
+           }
+           else{
             setAuth(false);
             setMessage(res.data.Error)
            }

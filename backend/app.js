@@ -28,6 +28,22 @@ const db = mysql.createConnection({
 app.get("/", verify, (req,res) => { //user dashboard
     // console.log(typeof req.isAdmin);
 
+    const cookie = req.headers.cookie;
+    if(cookie){
+        // console.log(cookie);
+        const token = cookie.split('=')[1];
+
+        // console.log(token);
+        const decoded = jwt.decode(token);
+        console.log("Decoded Token:--",decoded);
+        if(decoded.isAdmin === 1){
+            console.log("You are logged in as admin please log in as user to access this route");
+            res.json({Status:"You are admin"});
+        }
+    }
+
+    
+
     if(req.isAdmin === 1){
         res.json({message:"You are not allowed to enter this route"});
     }
@@ -48,6 +64,21 @@ app.get("/", verify, (req,res) => { //user dashboard
 })
 
 app.get("/admin-dashboard", verify, (req,res) => { //admin-dashboard
+
+    const cookie = req.headers.cookie;
+    if(cookie){
+        // console.log(cookie);
+        const token = cookie.split('=')[1];
+
+        // console.log(token);
+        const decoded = jwt.decode(token);
+        console.log("Decoded Token:--",decoded);
+        if(decoded.isAdmin === 0){
+            console.log("You are logged in as user please log in as user to access this route");
+        
+            res.json({Status:"You are user"});
+        }
+    }
     // console.log(typeof req.isAdmin);
     if(req.isAdmin === 0){
         res.json({message:"You are not allowed to enter this route"});

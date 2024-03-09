@@ -11,7 +11,7 @@ const Home = () => {
 
     
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
     axios.defaults.withCredentials = true;
 
@@ -27,7 +27,11 @@ const Home = () => {
             data ? console.log(data) : console.log(loading);;
             
             //  navigate("/login");
-           }else{
+           }
+           else if(res.data.Status === "You are admin"){
+            navigate("/admin-dashboard");
+           }
+           else{
             setAuth(false);
             setMessage(res.data.Error)
            }
@@ -69,7 +73,7 @@ const Home = () => {
             :
             <div className='dashboard-container'>
                 <div>
-                    <h3>Logged out Successfully</h3>
+                    <h3>You are not logged in</h3>
                     <h3>Login now</h3>
                     <Link to="/login" className=''>Login</Link>
                 </div>
