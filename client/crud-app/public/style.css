@@ -1,0 +1,128 @@
+body{
+    background-color: rgb(255, 221, 0);
+}
+.container{
+    width: auto;
+}
+
+.form-container{
+    width: fit-content;
+    margin: 10rem auto;
+    background-color: #ffffff;
+    padding: 20px 60px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 50px rgba(1, 13, 17, 0.456);
+}
+
+.form{
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+.form-element{
+    margin: 10px 0;
+}
+
+.form-element input{
+    padding: 10px;
+    text-align: left;
+    size: 50;
+}
+
+
+.dashboard-container{
+    text-align: center;
+    width: 40rem;
+    padding: 20px 0;
+    background-color: #ffffff;
+    margin: 5rem auto;
+    border-radius: 20px;
+    box-shadow: 10px 10px 50px rgba(1, 13, 17, 0.456);
+
+}
+
+/* .table-container{
+    text-align: left;
+    width: fit-content;
+    margin: 30px 0 ;
+}
+
+th,
+td {
+  width: 150px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+} */
+
+.table-container {
+    margin: 30px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: fit-content;
+  }
+  
+  .table-container td, .table-container th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .table-container tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .table-container tr:hover {background-color: #ddd;}
+  
+  .table-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #258ec3;
+    color: white;
+  }
+
+  .logout-btn{
+    background-color: red;
+    border: none;
+    width: 16.7rem;
+    margin: 10px auto;
+    color: white;
+    padding: 10px 0;
+    border-radius: 20px;
+  }
+
+  .login-btn{
+    width: 16.7rem;
+    margin: 10px auto;
+    padding: 10px 0;
+    background-color: rgb(6, 152, 91);
+    border: none;
+    border-radius: 20px;
+}
+
+  .logout-btn:hover{
+    background-color: rgb(138, 8, 8);
+    transition: 0.2s;
+  }
+
+  .login-btn:hover{
+    background-color: rgb(4, 103, 62);
+    transition: 0.2s;
+    color: white;
+  }
+
+  .operation{
+    margin: 10px;
+    text-decoration: none;
+    background-color: rgb(163, 160, 160);
+    padding: 7px 15px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+  }
+
+  .operation:hover{
+    background-color: rgb(99, 99, 99);
+    transition: 0.2s;
+  }
